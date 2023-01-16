@@ -8,10 +8,26 @@ java {
     }
 }
 
+group 'com.sourceallies'
+version '0.0.1-SNAPSHOT'
+
 repositories {
     mavenCentral()
 }
 
-dependencies {
+def junit5_version = '5.9.2'
+def assertj_version = '3.24.1'
 
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: "$junit5_version"
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: "$junit5_version"
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: "$assertj_version"
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: "$junit5_version"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
