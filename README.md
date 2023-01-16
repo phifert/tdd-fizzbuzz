@@ -1,2 +1,2 @@
 # tdd-fizzbuzz
-Test-drive development demo using FizzBuzz
+Test-driven development demo using FizzBuzz
